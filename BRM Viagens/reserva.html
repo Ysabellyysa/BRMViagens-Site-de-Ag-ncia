@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar reserva | BRM Viagens</title>
+  <meta name="description" content="Informe seus dados, escolha entre cartão de crédito ou Pix e confira taxas, valor bruto e montante final.">
+  <link rel="icon" href="imagens/favicon.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="imagens/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="imagens/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="topo">
+    <div class="container topo__barra">
+      <a class="marca" href="index.html" aria-label="BRM Viagens, página inicial">
+        <span class="marca__logo">
+          <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+        </span>
+        <span class="marca__texto">
+          <strong>BRM Viagens</strong>
+          <span>Agência de Viagens</span>
+        </span>
+      </a>
+
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a class="navegacao__link" href="index.html">Início</a>
+        <a class="navegacao__link" href="explorar.html">Explorar</a>
+        <a class="navegacao__link" href="destino.html">Destinos</a>
+        <a class="navegacao__link navegacao__link--ativo" href="reserva.html">Reservar</a>
+      </nav>
+
+      <div class="topo__acoes">
+        <div class="conta">
+          <a class="perfil-atalho" href="perfil.html" aria-expanded="false" aria-haspopup="true" aria-controls="menuConta">
+            <span class="perfil-atalho__avatar" aria-hidden="true">MB</span>
+            <span class="perfil-atalho__info">
+              <span>Minha conta</span>
+              <strong>Maria Beatriz</strong>
+            </span>
+            <span class="perfil-atalho__seta" aria-hidden="true">▾</span>
+          </a>
+
+          <div class="conta__menu" id="menuConta" hidden>
+            <div class="conta__cabecalho">
+              <strong>Maria Beatriz</strong>
+              <span>Viajante BRM desde abril de 2025</span>
+            </div>
+
+            <a class="conta__item" href="perfil.html">
+              <span class="conta__icone" aria-hidden="true">👤</span>
+              <span>
+                <strong>Meu perfil</strong>
+                <small>Dados e preferências de viagem</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="reserva.html">
+              <span class="conta__icone" aria-hidden="true">🎫</span>
+              <span>
+                <strong>Minhas reservas</strong>
+                <small>Pagamentos, vouchers e pedidos</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="criar-perfil.html">
+              <span class="conta__icone" aria-hidden="true">✨</span>
+              <span>
+                <strong>Criar novo perfil</strong>
+                <small>Cadastre outro viajante</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item" href="admin.html">
+              <span class="conta__icone" aria-hidden="true">🛠</span>
+              <span>
+                <strong>Perfil Admin</strong>
+                <small>Criar conta de administração</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item conta__item--sair" href="entrar.html">
+              <span class="conta__icone" aria-hidden="true">🚪</span>
+              <span>
+                <strong>Sair</strong>
+                <small>Encerrar sessão e voltar ao login</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="explorar__topo">
+      <div class="container">
+        <header class="secao__cabecalho">
+          <span class="secao__etiqueta">Página Finalizar reserva</span>
+          <h1 class="secao__titulo">Só falta confirmar a sua viagem</h1>
+          <p class="secao__descricao">
+            Confira seus dados, escolha como pagar e revise o painel ao lado antes de fechar a compra.
+            Você ainda pode voltar e mudar qualquer informação.
+          </p>
+        </header>
+      </div>
+    </section>
+
+    <section class="container grade-reserva" data-etapa-reserva="formulario">
+      <!--
+        ===== ONDE MUDAR OS VALORES E REGRAS DA RESERVA =====
+        * Valor do pacote por pessoa e taxa de proteção: js/script.js (constantes VALOR_BASE e TAXA_PROTECAO).
+        * Textos do painel lateral (resumo fixo): marque as linhas com id="resumoBruto", "resumoTaxas",
+          "resumoTotal" e "resumoParcelas" logo abaixo.
+        * Campos das abas de pagamento: bloco "Pagamento" mais abaixo neste arquivo.
+      -->
+      <form class="formulario-cartao" id="formularioReserva">
+        <div class="formulario-bloco">
+          <h2 class="formulario-bloco__titulo">Dados do titular</h2>
+          <p class="formulario-bloco__ajuda">É quem consta nos bilhetes emitidos pela BRM Viagens.</p>
+
+          <div class="linha-campos">
+            <div class="campo campo--completo">
+              <label for="nomeCompleto">Nome completo</label>
+              <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Maria Beatriz Nogueira" required>
+            </div>
+
+            <div class="campo">
+              <label for="cpf">CPF</label>
+              <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" inputmode="numeric" required>
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+            </div>
+
+            <div class="campo campo--completo">
+              <label for="telefone">Telefone (com DDD)</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(11) 90000-0000" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="formulario-bloco">
+          <h2 class="formulario-bloco__titulo">Pagamento</h2>
+          <p class="formulario-bloco__ajuda">Escolha entre cartão de crédito ou Pix.</p>
+
+          <div class="abas-pagamento" role="tablist" aria-label="Formas de pagamento">
+            <button class="aba aba--ativa" type="button" role="tab" id="abaCartao" data-aba="painelCartao" aria-selected="true">
+              💳 Cartão de crédito
+            </button>
+            <button class="aba" type="button" role="tab" id="abaPix" data-aba="painelPix" aria-selected="false">
+              ⚡ Pix
+            </button>
+          </div>
+
+          <!-- Campos do cartão de crédito: troque os name/placeholder conforme o que a operadora exigir -->
+          <div class="aba-painel aba-painel--ativo" id="painelCartao" role="tabpanel" aria-labelledby="abaCartao">
+            <div class="linha-campos">
+              <div class="campo campo--completo">
+                <label for="numeroCartao">Número do cartão</label>
+                <input type="text" id="numeroCartao" name="numeroCartao" placeholder="0000 0000 0000 0000" inputmode="numeric">
+              </div>
+
+              <div class="campo campo--completo">
+                <label for="nomeCartao">Nome impresso no cartão</label>
+                <input type="text" id="nomeCartao" name="nomeCartao" placeholder="MARIA B NOGUEIRA">
+              </div>
+
+              <div class="campo">
+                <label for="validade">Validade</label>
+                <input type="text" id="validade" name="validade" placeholder="MM/AA" inputmode="numeric">
+              </div>
+
+              <div class="campo">
+                <label for="cvv">Código de segurança (CVV)</label>
+                <input type="text" id="cvv" name="cvv" placeholder="000" inputmode="numeric">
+              </div>
+
+              <div class="campo campo--completo">
+                <label for="parcelasCartao">Parcelamento</label>
+                <select id="parcelasCartao" name="parcelasCartao">
+                  <option value="1">À vista — sem juros</option>
+                  <option value="2">2x de R$ 2.559,00 sem juros</option>
+                  <option value="3">3x de R$ 1.706,00 sem juros</option>
+                  <option value="6" selected>6x de R$ 853,00 sem juros</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Campos/informações do Pix -->
+          <div class="aba-painel" id="painelPix" role="tabpanel" aria-labelledby="abaPix">
+            <div class="pix-aviso">
+              <span style="font-size: 2rem;" aria-hidden="true">⚠️</span>
+              <div class="pix-aviso__texto">
+                <strong>Pagamento via Pix em até 30 minutos</strong>
+                <span>O QR Code definitivo aparece na próxima tela, junto com o número do pedido.</span>
+              </div>
+            </div>
+
+            <div class="pix-quadro">
+              Chave Pix (e-mail): maria.beatriz@email.com<br>
+              Titular: Maria Beatriz Nogueira<br>
+              Banco: Banco do Brasil · Agência 1240 · Conta 88213-4
+            </div>
+
+            <p class="formulario-bloco__ajuda" style="margin-top: 16px;">
+              O pedido fica com status “Aguardando Pix” até a confirmação, que costuma acontecer
+              em poucos minutos. A reserva só é bloqueada depois do pagamento identificado.
+            </p>
+          </div>
+        </div>
+
+        <div class="formulario-bloco">
+          <h2 class="formulario-bloco__titulo">Confirmação</h2>
+          <p class="formulario-bloco__ajuda">Leia e aceite antes de fechar a compra.</p>
+
+          <label class="campo-check" for="aceiteTermos">
+            <input type="checkbox" id="aceiteTermos" name="aceiteTermos" required>
+            <span>Li e aceito os termos de reserva, a política de cancelamento gratuito até 20 dias antes da saída e a política de suporte 24h da BRM Viagens.</span>
+          </label>
+        </div>
+      </form>
+
+      <aside class="resumo-compra" aria-label="Resumo da compra">
+        <h2 class="resumo-compra__titulo">Resumo da reserva</h2>
+
+        <div class="linha-resumo">
+          <span>Roteiro</span>
+          <strong>Serra da Mantiqueira</strong>
+        </div>
+        <div class="linha-resumo">
+          <span>Data escolhida</span>
+          <strong>12 de março de 2026</strong>
+        </div>
+        <div class="linha-resumo">
+          <span>Duração</span>
+          <strong>5 dias e 4 noites</strong>
+        </div>
+        <div class="linha-resumo">
+          <span>Viajantes</span>
+          <strong id="resumoViagens">2 pessoas</strong>
+        </div>
+
+        <div class="campo" style="margin: 16px 0;">
+          <label for="quantidadePessoas">Quantidade de viajantes</label>
+          <select id="quantidadePessoas" name="quantidadePessoas">
+            <option value="1">1 pessoa</option>
+            <option value="2" selected>2 pessoas</option>
+            <option value="3">3 pessoas</option>
+            <option value="4">4 pessoas</option>
+            <option value="5">5 pessoas</option>
+            <option value="6">6 pessoas</option>
+          </select>
+        </div>
+
+        <div class="linha-resumo">
+          <span>Valor bruto do pacote</span>
+          <strong id="resumoBruto">R$ 4.960</strong>
+        </div>
+        <div class="linha-resumo">
+          <span>Taxa de proteção BRM (2 x R$ 79)</span>
+          <strong id="resumoTaxas">R$ 158</strong>
+        </div>
+        <div class="linha-resumo">
+          <span>Descontos aplicados</span>
+          <strong>R$ 0,00</strong>
+        </div>
+
+        <div class="resumo-compra__total">
+          <span>Montante final</span>
+          <strong id="resumoTotal">R$ 5.118</strong>
+        </div>
+        <p class="resumo-compra__parcelas" id="resumoParcelas">ou 6x de R$ 853,00 sem juros</p>
+
+        <button class="botao botao--primario" type="submit" form="formularioReserva" style="width: 100%;">
+          Fechar reserva
+        </button>
+
+        <p class="selo-seguranca">
+          <span aria-hidden="true">🔒</span>
+          Ambiente seguro. Seus dados são usados apenas para emitir os bilhetes.
+        </p>
+      </aside>
+    </section>
+    <section class="container confirmacao" id="minhaReserva" hidden>
+      <header class="confirmacao__cabecalho">
+        <span class="icone-check" aria-hidden="true">✓</span>
+        <h2>Reserva confirmada!</h2>
+        <p>
+          Recebemos o seu pagamento e a vaga na Serra da Mantiqueira já está garantida.
+          Os bilhetes e o roteiro digital também foram enviados para o seu e-mail cadastrado.
+        </p>
+        <p class="numero-pedido">
+          <span>Número do pedido</span>
+          <strong id="numeroPedido">BRM-482917</strong>
+        </p>
+      </header>
+
+      <section class="quadro-detalhes" aria-label="Resumo da reserva confirmada">
+        <h2>Resumo da sua reserva</h2>
+
+        <div class="quadro-linha">
+          <span class="quadro-linha__rotulo">Titular</span>
+          <span class="quadro-linha__valor" id="titularReserva">Maria Beatriz Nogueira</span>
+        </div>
+        <div class="quadro-linha">
+          <span class="quadro-linha__rotulo">Roteiro confirmado</span>
+          <span class="quadro-linha__valor">Serra da Mantiqueira · 5 dias e 4 noites</span>
+        </div>
+        <div class="quadro-linha">
+          <span class="quadro-linha__rotulo">Data escolhida</span>
+          <span class="quadro-linha__valor">Saída em 12 de março de 2026 · retorno em 16 de março de 2026</span>
+        </div>
+        <div class="quadro-linha">
+          <span class="quadro-linha__rotulo">Perfil de viajante</span>
+          <span class="quadro-linha__valor">Casal</span>
+        </div>
+        <div class="quadro-linha">
+          <span class="quadro-linha__rotulo">Pagamento</span>
+          <span class="quadro-linha__valor" id="resumoPagamento">Cartão de crédito · 6x de R$ 853,00 sem juros</span>
+        </div>
+        <div class="quadro-linha">
+          <span class="quadro-linha__rotulo">Valor total pago</span>
+          <span class="quadro-linha__valor">R$ 5.118,00 (pacote R$ 4.960,00 + taxa de proteção R$ 158,00)</span>
+        </div>
+        <div class="quadro-linha">
+          <span class="quadro-linha__rotulo">Consultor responsável</span>
+          <span class="quadro-linha__valor">Rafael Nogueira · WhatsApp (11) 98877-1234 · disponível 24h</span>
+        </div>
+      </section>
+
+      <section class="quadro-detalhes" aria-label="Bilhetes emitidos">
+        <h2>Bilhetes emitidos</h2>
+        <p class="secao__descricao" style="margin: 0;">
+          Dois bilhetes foram gerados no seu nome, com os mesmos horários e o mesmo roteiro.
+        </p>
+
+        <div class="bilhetes">
+          <div class="bilhete">
+            <span>
+              <strong>Maria Beatriz Nogueira</strong><br>
+              CPF 000.000.000-00 · Bilhete único BRM-MN-482917-1
+            </span>
+            <span>Trecho: Serra da Mantiqueira</span>
+            <span class="selo-disponibilidade selo-disponibilidade--vagas">Emitido</span>
+          </div>
+
+          <div class="bilhete">
+            <span>
+              <strong>Lucas Nogueira</strong><br>
+              CPF 000.000.000-01 · Bilhete único BRM-MN-482917-2
+            </span>
+            <span>Trecho: Serra da Mantiqueira</span>
+            <span class="selo-disponibilidade selo-disponibilidade--vagas">Emitido</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="quadro-detalhes" aria-label="O que fazer agora">
+        <h2>O que fazer agora</h2>
+        <p class="secao__descricao" style="margin: 0;">
+          Siga estes quatro passos para deixar a viagem com tudo pronto.
+        </p>
+
+        <div class="lista-acoes">
+          <article class="acao">
+            <span class="acao__numero">1</span>
+            <div>
+              <p class="acao__titulo">Fazer o check-in</p>
+              <p class="acao__texto">
+                Libere os acompanhantes da sua reserva no seu perfil. Sem essa liberação,
+                o acompanhante não consegue acessar o site.
+              </p>
+              <a class="botao botao--claro botao--pequeno" href="perfil.html" style="margin-top: 12px;">Ir para o check-in</a>
+            </div>
+          </article>
+
+          <article class="acao acao--2">
+            <span class="acao__numero">2</span>
+            <div>
+              <p class="acao__titulo">Revisar a reserva</p>
+              <p class="acao__texto">
+                Confira nome, CPF e telefone de cada viajante. Divergências com o documento
+                podem impedir o embarque.
+              </p>
+              <a class="botao botao--claro botao--pequeno" href="perfil.html" style="margin-top: 12px;">Revisar dados</a>
+            </div>
+          </article>
+
+          <article class="acao acao--3">
+            <span class="acao__numero">3</span>
+            <div>
+              <p class="acao__titulo">Preparar a mala</p>
+              <p class="acao__texto">
+                O roteiro traz uma lista de roupas, calçados e equipamentos recomendados
+                para a trilha do segundo dia.
+              </p>
+              <a class="botao botao--claro botao--pequeno" href="#" data-aviso="Abrindo a lista de embalagem no seu perfil..." style="margin-top: 12px;">Ver lista de mala</a>
+            </div>
+          </article>
+
+          <article class="acao acao--4">
+            <span class="acao__numero">4</span>
+            <div>
+              <p class="acao__titulo">Baixar o roteiro digital</p>
+              <p class="acao__texto">
+                Salve o PDF do roteiro com horários, pontos de encontro, contatos dos
+                guias e Emergência BRM 24h.
+              </p>
+              <button class="botao botao--claro botao--pequeno" type="button" data-aviso="Roteiro digital baixado com sucesso." style="margin-top: 12px;">
+                Baixar roteiro (PDF)
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="chamada" style="margin-top: 26px;">
+        <h2>Alguma mudança de planos?</h2>
+        <p>
+          Cancelamento gratuito até 20 dias antes da saída. Depois disso, o nosso consultor
+          verifica as condições da reserva com você.
+        </p>
+        <div class="chamada__botoes">
+          <a class="botao botao--primario" href="perfil.html">Ver minhas reservas</a>
+          <button class="botao botao--fantasma" type="button" data-aviso="Um consultor BRM entrará em contato em poucos minutos.">
+            Falar com o consultor
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <a class="marca" href="index.html">
+            <span class="marca__logo">
+              <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+            </span>
+            <span class="marca__texto">
+              <strong>BRM Viagens</strong>
+              <span>Agência de Viagens</span>
+            </span>
+          </a>
+          <p style="margin-top: 14px;">Viagens autorais para quem prefere conhecer e viver cada destino com tempo, segurança e alguém por perto.</p>
+          <div class="rodape__social">
+            <a href="#" aria-label="Instagram da BRM Viagens">ig</a>
+            <a href="#" aria-label="Facebook da BRM Viagens">fb</a>
+            <a href="#" aria-label="WhatsApp da BRM Viagens">wa</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="explorar.html">Explorar destinos</a></li>
+            <li><a href="destino.html">Detalhes e preços</a></li>
+            <li><a href="reserva.html">Finalizar reserva</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Sua conta</h3>
+          <ul>
+            <li><a href="perfil.html">Meu perfil</a></li>
+            <li><a href="criar-perfil.html">Criar perfil</a></li>
+            <li><a href="reserva.html#minhaReserva">Minha reserva</a></li>
+            <li><a href="admin.html">Perfil Admin</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li>Atendimento 24h: (11) 4002-8922</li>
+            <li>contato@brmviagens.com.br</li>
+            <li>Minas Gerais · MG</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">© 2026 BRM Viagens. Todos os direitos reservados. · Projeto acadêmico.</div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

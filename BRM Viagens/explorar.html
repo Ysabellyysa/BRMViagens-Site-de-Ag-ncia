@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorar destinos | BRM Viagens</title>
+  <meta name="description" content="Use destino, datas, perfil, faixa de preço, estrelas, duração e tags de interesse para encontrar o roteiro ideal.">
+  <link rel="icon" href="imagens/favicon.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="imagens/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="imagens/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="topo">
+    <div class="container topo__barra">
+      <a class="marca" href="index.html" aria-label="BRM Viagens, página inicial">
+        <span class="marca__logo">
+          <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+        </span>
+        <span class="marca__texto">
+          <strong>BRM Viagens</strong>
+          <span>Agência de Viagens</span>
+        </span>
+      </a>
+
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a class="navegacao__link" href="index.html">Início</a>
+        <a class="navegacao__link navegacao__link--ativo" href="explorar.html">Explorar</a>
+        <a class="navegacao__link" href="destino.html">Destinos</a>
+        <a class="navegacao__link" href="reserva.html">Reservar</a>
+      </nav>
+
+      <div class="topo__acoes">
+        <div class="conta">
+          <a class="perfil-atalho" href="perfil.html" aria-expanded="false" aria-haspopup="true" aria-controls="menuConta">
+            <span class="perfil-atalho__avatar" aria-hidden="true">MB</span>
+            <span class="perfil-atalho__info">
+              <span>Minha conta</span>
+              <strong>Maria Beatriz</strong>
+            </span>
+            <span class="perfil-atalho__seta" aria-hidden="true">▾</span>
+          </a>
+
+          <div class="conta__menu" id="menuConta" hidden>
+            <div class="conta__cabecalho">
+              <strong>Maria Beatriz</strong>
+              <span>Viajante BRM desde abril de 2025</span>
+            </div>
+
+            <a class="conta__item" href="perfil.html">
+              <span class="conta__icone" aria-hidden="true">👤</span>
+              <span>
+                <strong>Meu perfil</strong>
+                <small>Dados e preferências de viagem</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="reserva.html">
+              <span class="conta__icone" aria-hidden="true">🎫</span>
+              <span>
+                <strong>Minhas reservas</strong>
+                <small>Pagamentos, vouchers e pedidos</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="criar-perfil.html">
+              <span class="conta__icone" aria-hidden="true">✨</span>
+              <span>
+                <strong>Criar novo perfil</strong>
+                <small>Cadastre outro viajante</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item" href="admin.html">
+              <span class="conta__icone" aria-hidden="true">🛠</span>
+              <span>
+                <strong>Perfil Admin</strong>
+                <small>Criar conta de administração</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item conta__item--sair" href="entrar.html">
+              <span class="conta__icone" aria-hidden="true">🚪</span>
+              <span>
+                <strong>Sair</strong>
+                <small>Encerrar sessão e voltar ao login</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="explorar__topo">
+      <div class="container">
+        <header class="secao__cabecalho">
+          <span class="secao__etiqueta">Página Explorar</span>
+          <h1 class="secao__titulo">Monte a busca do seu jeito</h1>
+          <p class="secao__descricao">
+            Preencha destino, datas e perfil desejado ou use os filtros avançados de preço,
+            estrelas, duração e tags de interesse. Os cards mostram o perfil de cada roteiro
+            para você reconhecer rapidamente o que combina com a sua viagem.
+          </p>
+        </header>
+      </div>
+    </section>
+
+    <section class="container explorar__grade">
+      <aside class="painel-filtros" id="painelExplorar" aria-label="Filtros de busca">
+        <h2 class="painel-filtros__titulo">Filtros</h2>
+        <p class="painel-filtros__ajuda">Os resultados da lista ao lado são atualizados na hora.</p>
+
+        <div class="grupo-filtro">
+          <p class="grupo-filtro__titulo">1. Destino</p>
+          <div class="campo">
+            <label for="explorarBusca" class="grupo-filtro__titulo">Nome do destino</label>
+            <input type="search" id="explorarBusca" placeholder="Ex.: Noronha, Ouro Preto..." autocomplete="off">
+          </div>
+        </div>
+
+        <div class="grupo-filtro">
+          <p class="grupo-filtro__titulo">2. Datas da viagem</p>
+          <label class="opcao" for="datasFlexiveis">
+            <input type="checkbox" id="datasFlexiveis" name="datasFlexiveis">
+            Minhas datas são flexíveis
+          </label>
+          <div class="linha-campos" id="blocoDatas">
+            <div class="campo">
+              <label for="datasSaida">Saída</label>
+              <input type="date" id="datasSaida" name="saida">
+            </div>
+            <div class="campo">
+              <label for="datasVolta">Volta</label>
+              <input type="date" id="datasVolta" name="volta">
+            </div>
+          </div>
+        </div>
+
+        <div class="grupo-filtro">
+          <p class="grupo-filtro__titulo">3. Perfil desejado</p>
+          <div class="opcoes-perfil" role="radiogroup" aria-label="Perfil de viajante">
+            <label class="opcao-perfil">
+              <input type="radio" name="perfil" value="todos" checked>
+              <span class="opcao-perfil__ponto" style="background: var(--tinta-clara);" aria-hidden="true"></span>
+              Todos os perfis
+            </label>
+            <label class="opcao-perfil">
+              <input type="radio" name="perfil" value="solo">
+              <span class="opcao-perfil__ponto opcao-perfil__ponto--solo" aria-hidden="true"></span>
+              Solo
+            </label>
+            <label class="opcao-perfil">
+              <input type="radio" name="perfil" value="casal">
+              <span class="opcao-perfil__ponto opcao-perfil__ponto--casal" aria-hidden="true"></span>
+              Casal
+            </label>
+            <label class="opcao-perfil">
+              <input type="radio" name="perfil" value="familia">
+              <span class="opcao-perfil__ponto opcao-perfil__ponto--familia" aria-hidden="true"></span>
+              Família
+            </label>
+            <label class="opcao-perfil">
+              <input type="radio" name="perfil" value="grupo">
+              <span class="opcao-perfil__ponto opcao-perfil__ponto--grupo" aria-hidden="true"></span>
+              Grupo
+            </label>
+          </div>
+        </div>
+
+        <div class="grupo-filtro">
+          <p class="grupo-filtro__titulo">4. Faixa de preço (por pessoa)</p>
+          <label class="opcao" for="precoAte2000">
+            <input type="checkbox" id="precoAte2000" name="preco" value="0" data-min="0" data-max="2000">
+            Até R$ 2.000
+          </label>
+          <label class="opcao" for="preco2000a3500">
+            <input type="checkbox" id="preco2000a3500" name="preco" value="2000" data-min="2000" data-max="3500">
+            R$ 2.000 a R$ 3.500
+          </label>
+          <label class="opcao" for="precoAcima3500">
+            <input type="checkbox" id="precoAcima3500" name="preco" value="3500" data-min="3500">
+            Acima de R$ 3.500
+          </label>
+        </div>
+
+        <div class="grupo-filtro">
+          <p class="grupo-filtro__titulo">5. Classificação de estrelas</p>
+          <label class="opcao" for="estrelas3">
+            <input type="checkbox" id="estrelas3" name="estrelas" value="3">
+            3 estrelas — bom custo-benefício
+          </label>
+          <label class="opcao" for="estrelas4">
+            <input type="checkbox" id="estrelas4" name="estrelas" value="4">
+            4 estrelas — conforto
+          </label>
+          <label class="opcao" for="estrelas5">
+            <input type="checkbox" id="estrelas5" name="estrelas" value="5">
+            5 estrelas — experiência premium
+          </label>
+        </div>
+
+        <div class="grupo-filtro">
+          <p class="grupo-filtro__titulo">6. Duração do roteiro</p>
+          <label class="opcao" for="duracao3">
+            <input type="checkbox" id="duracao3" name="duracao" value="3">
+            3 dias — fim de semana
+          </label>
+          <label class="opcao" for="duracao5">
+            <input type="checkbox" id="duracao5" name="duracao" value="5">
+            5 dias — viagem clássica
+          </label>
+          <label class="opcao" for="duracao7">
+            <input type="checkbox" id="duracao7" name="duracao" value="7">
+            7 dias — imersão total
+          </label>
+        </div>
+
+        <div class="grupo-filtro">
+          <p class="grupo-filtro__titulo">7. Tags de interesse</p>
+          <div class="tags">
+            <label class="tag">
+              <input type="checkbox" name="tag" value="praia" hidden> praia
+            </label>
+            <label class="tag">
+              <input type="checkbox" name="tag" value="montanha" hidden> montanha
+            </label>
+            <label class="tag">
+              <input type="checkbox" name="tag" value="natureza" hidden> natureza
+            </label>
+            <label class="tag">
+              <input type="checkbox" name="tag" value="gastronomia" hidden> gastronomia
+            </label>
+            <label class="tag">
+              <input type="checkbox" name="tag" value="historia" hidden> história
+            </label>
+            <label class="tag">
+              <input type="checkbox" name="tag" value="artesanato" hidden> artesanato
+            </label>
+            <label class="tag">
+              <input type="checkbox" name="tag" value="fotografia" hidden> fotografia
+            </label>
+            <label class="tag">
+              <input type="checkbox" name="tag" value="bem-estar" hidden> bem-estar
+            </label>
+          </div>
+        </div>
+
+        <button class="botao botao--claro botao--pequeno" type="button" id="limparFiltros" style="width: 100%;">
+          Limpar filtros
+        </button>
+      </aside>
+
+      <div>
+        <div class="barra-resultados">
+          <strong id="contadorExplorar">14 destinos encontrados</strong>
+          <span class="numero" style="box-shadow: none; background: var(--creme-2); padding: 10px 18px;" id="periodoEscolhido">
+            Escolha as datas para refinar a busca
+          </span>
+        </div>
+
+        <!--
+          ===== ONDE TROCAR AS IMAGENS E OS PREÇOS DESTES CARDS =====
+          * Imagem: troque o src dentro de <div class="cartao__foto">.
+          * Preço exibido: em <div class="cartao__preco">.
+          * Preço usado pelos filtros: atributo data-preco do <article class="cartao">.
+        -->
+        <div class="grade-cartoes" id="gradeExplorar">
+
+          <article class="cartao"
+            data-nome="Serra da Mantiqueira"
+            data-perfil="solo casal familia grupo"
+            data-preco="2480"
+            data-estrelas="5"
+            data-duracao="5"
+            data-tags="montanha natureza fotografia bem-estar">
+            <div class="cartao__foto">
+              <img src="imagens/mantigueira.jpeg" alt="Montanhas da Serra da Mantiqueira" width="1200" height="800">
+              <span class="cartao__perfil cartao__perfil--solo">Solo</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Minas Gerais</span>
+              <h3 class="cartao__nome">Serra da Mantiqueira</h3>
+              <div class="cartao__info">
+                <span>5 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,9 (128)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 2.480</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Lençóis Maranhenses"
+            data-perfil="solo casal grupo"
+            data-preco="3120"
+            data-estrelas="4"
+            data-duracao="7"
+            data-tags="natureza fotografia bem-estar">
+            <div class="cartao__foto">
+              <img src="imagens/lencol.jpeg" alt="Dunas dos Lençóis Maranhenses" width="1200" height="800">
+              <span class="cartao__perfil cartao__perfil--solo">Solo</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Maranhão</span>
+              <h3 class="cartao__nome">Lençóis Maranhenses</h3>
+              <div class="cartao__info">
+                <span>7 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <span>4,8 (96)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 3.120</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Fernando de Noronha"
+            data-perfil="grupo casal familia"
+            data-preco="4890"
+            data-estrelas="5"
+            data-duracao="7"
+            data-tags="praia natureza fotografia bem-estar">
+            <div class="cartao__foto">
+              <img src="imagens/Noronha.jpeg" alt="Praia de Fernando de Noronha" width="1200" height="807">
+              <span class="cartao__perfil cartao__perfil--casal">Casal</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Pernambuco</span>
+              <h3 class="cartao__nome">Fernando de Noronha</h3>
+              <div class="cartao__info">
+                <span>7 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>5,0 (154)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 4.890</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Pantanal"
+            data-perfil="solo casal grupo familia"
+            data-preco="2950"
+            data-estrelas="3"
+            data-duracao="5"
+            data-tags="natureza fotografia">
+            <div class="cartao__foto">
+              <img src="imagens/pantanal.jpeg" alt="Paisagem do Pantanal" width="1127" height="600">
+              <span class="cartao__perfil cartao__perfil--grupo">Grupo</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Mato Grosso</span>
+              <h3 class="cartao__nome">Pantanal</h3>
+              <div class="cartao__info">
+                <span>5 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★☆☆</span>
+                <span>4,7 (82)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 2.950</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Salvador Pelourinho"
+            data-perfil="grupo familia casal"
+            data-preco="1780"
+            data-estrelas="4"
+            data-duracao="3"
+            data-tags="gastronomia historia artesanato">
+            <div class="cartao__foto">
+              <img src="imagens/salvador.jpeg" alt="Casario colorido de Salvador" width="900" height="553">
+              <span class="cartao__perfil cartao__perfil--grupo">Grupo</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Bahia</span>
+              <h3 class="cartao__nome">Salvador Pelourinho</h3>
+              <div class="cartao__info">
+                <span>3 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <span>4,8 (211)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 1.780</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Gramado e Canela"
+            data-perfil="familia casal"
+            data-preco="1980"
+            data-estrelas="5"
+            data-duracao="3"
+            data-tags="gastronomia natureza bem-estar">
+            <div class="cartao__foto">
+              <img src="imagens/Gramado.jpeg" alt="Casas de estilo europeu em Gramado" width="419" height="279">
+              <span class="cartao__perfil cartao__perfil--familia">Família</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Rio Grande do Sul</span>
+              <h3 class="cartao__nome">Gramado e Canela</h3>
+              <div class="cartao__info">
+                <span>3 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,9 (173)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 1.980</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Ouro Preto"
+            data-perfil="grupo familia casal"
+            data-preco="1640"
+            data-estrelas="3"
+            data-duracao="3"
+            data-tags="historia artesanato gastronomia">
+            <div class="cartao__foto">
+              <img src="imagens/ouropreto.jpeg" alt="Casario colonial de Ouro Preto" width="1200" height="800">
+              <span class="cartao__perfil cartao__perfil--grupo">Grupo</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Minas Gerais</span>
+              <h3 class="cartao__nome">Ouro Preto</h3>
+              <div class="cartao__info">
+                <span>3 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★☆☆</span>
+                <span>4,6 (140)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 1.640</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Ilha do Mel"
+            data-perfil="familia casal solo"
+            data-preco="2150"
+            data-estrelas="4"
+            data-duracao="5"
+            data-tags="praia natureza gastronomia">
+            <div class="cartao__foto">
+              <img src="imagens/ilhasdemel.jpeg" alt="Praia da Ilha do Mel" width="679" height="451">
+              <span class="cartao__perfil cartao__perfil--solo">Solo</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Paraná</span>
+              <h3 class="cartao__nome">Ilha do Mel</h3>
+              <div class="cartao__info">
+                <span>5 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <span>4,8 (67)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 2.150</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <!-- ===== NOVOS DESTINOS (PROVISÓRIOS) =====
+               Troque imagem (src), preço exibido, data-preco, estrelas e avaliação quando tiver os dados finais. -->
+
+          <article class="cartao"
+            data-nome="Porto de Galinhas"
+            data-perfil="familia casal grupo"
+            data-preco="2590"
+            data-estrelas="4"
+            data-duracao="5"
+            data-tags="praia natureza gastronomia bem-estar">
+            <div class="cartao__foto">
+              <img src="imagens/salvador.jpeg" alt="Piscinas naturais de Porto de Galinhas" width="900" height="553">
+              <span class="cartao__perfil cartao__perfil--familia">Família</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Pernambuco</span>
+              <h3 class="cartao__nome">Porto de Galinhas</h3>
+              <div class="cartao__info">
+                <span>5 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <span>4,8 (342)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 2.590</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Serra e Litoral de Santa Catarina"
+            data-perfil="familia casal grupo"
+            data-preco="2890"
+            data-estrelas="5"
+            data-duracao="5"
+            data-tags="praia montanha natureza gastronomia">
+            <div class="cartao__foto">
+              <img src="imagens/Gramado.jpeg" alt="Serra de Santa Catarina" width="419" height="279">
+              <span class="cartao__perfil cartao__perfil--casal">Casal</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Santa Catarina</span>
+              <h3 class="cartao__nome">Serra & Litoral de Santa Catarina</h3>
+              <div class="cartao__info">
+                <span>5 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,9 (267)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 2.890</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Mato Grosso"
+            data-perfil="grupo familia casal"
+            data-preco="3150"
+            data-estrelas="4"
+            data-duracao="7"
+            data-tags="natureza montanha fotografia">
+            <div class="cartao__foto">
+              <img src="imagens/pantanal.jpeg" alt="Natureza do Mato Grosso" width="1127" height="600">
+              <span class="cartao__perfil cartao__perfil--grupo">Grupo</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Mato Grosso</span>
+              <h3 class="cartao__nome">Mato Grosso</h3>
+              <div class="cartao__info">
+                <span>7 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <span>4,7 (118)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 3.150</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Tribo Indígena Pataxós"
+            data-perfil="grupo familia casal"
+            data-preco="1990"
+            data-estrelas="4"
+            data-duracao="3"
+            data-tags="historia artesanato natureza">
+            <div class="cartao__foto">
+              <img src="imagens/turismo.jpeg" alt="Território da tribo indígena Pataxós" width="740" height="494">
+              <span class="cartao__perfil cartao__perfil--grupo">Grupo</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Bahia</span>
+              <h3 class="cartao__nome">Tribo Indígena Pataxós</h3>
+              <div class="cartao__info">
+                <span>3 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,9 (74)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 1.990</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Caldas Novas"
+            data-perfil="familia grupo casal"
+            data-preco="1540"
+            data-estrelas="4"
+            data-duracao="3"
+            data-tags="bem-estar natureza gastronomia">
+            <div class="cartao__foto">
+              <img src="imagens/lencol.jpeg" alt="Águas termais de Caldas Novas" width="1200" height="800">
+              <span class="cartao__perfil cartao__perfil--familia">Família</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Goiás</span>
+              <h3 class="cartao__nome">Caldas Novas</h3>
+              <div class="cartao__info">
+                <span>3 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <span>4,6 (389)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 1.540</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="cartao"
+            data-nome="Rio Quente"
+            data-perfil="familia casal grupo"
+            data-preco="2120"
+            data-estrelas="5"
+            data-duracao="5"
+            data-tags="bem-estar natureza gastronomia">
+            <div class="cartao__foto">
+              <img src="imagens/mantigueira.jpeg" alt="Águas quentes de Rio Quente" width="1200" height="800">
+              <span class="cartao__perfil cartao__perfil--casal">Casal</span>
+            </div>
+            <div class="cartao__corpo">
+              <span class="cartao__local">Goiás</span>
+              <h3 class="cartao__nome">Rio Quente</h3>
+              <div class="cartao__info">
+                <span>5 dias</span>
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,8 (212)</span>
+              </div>
+              <div class="cartao__preco">
+                <strong>R$ 2.120</strong>
+                <span>/ pessoa</span>
+              </div>
+            </div>
+            <div class="cartao__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="outros-destinos" id="blocoOutros" hidden>
+          <button class="outros-destinos__botao" type="button" id="botaoOutros"
+            data-aviso="Para listar todos os destinos de uma vez será necessário usar um banco de dados.">
+            <span>Outros destinos <small id="contadorOutros"></small></span>
+            <span aria-hidden="true">▾</span>
+          </button>
+
+          <div class="outros-destinos__grade" id="gradeOutros"></div>
+        </div>
+
+        <p class="sem-resultados" id="avisoExplorar">
+          Nenhum destino combina com esses filtros. Tente ampliar a faixa de preço,
+          remover uma tag de interesse ou <a href="#" data-aviso="Chamando um consultor BRM no WhatsApp...">falar com um consultor</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <a class="marca" href="index.html">
+            <span class="marca__logo">
+              <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+            </span>
+            <span class="marca__texto">
+              <strong>BRM Viagens</strong>
+              <span>Agência de Viagens</span>
+            </span>
+          </a>
+          <p style="margin-top: 14px;">Viagens autorais para quem prefere conhecer e viver cada destino com tempo, segurança e alguém por perto.</p>
+          <div class="rodape__social">
+            <a href="#" aria-label="Instagram da BRM Viagens">ig</a>
+            <a href="#" aria-label="Facebook da BRM Viagens">fb</a>
+            <a href="#" aria-label="WhatsApp da BRM Viagens">wa</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="explorar.html">Explorar destinos</a></li>
+            <li><a href="destino.html">Detalhes e preços</a></li>
+            <li><a href="reserva.html">Finalizar reserva</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Sua conta</h3>
+          <ul>
+            <li><a href="perfil.html">Meu perfil</a></li>
+            <li><a href="criar-perfil.html">Criar perfil</a></li>
+            <li><a href="reserva.html#minhaReserva">Minha reserva</a></li>
+            <li><a href="admin.html">Perfil Admin</a></li>
+            <li><a href="criar-admin.html">Criar perfil Admin</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li>Atendimento 24h: (11) 4002-8922</li>
+            <li>contato@brmviagens.com.br</li>
+            <li>Minas Gerais · MG</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">© 2026 BRM Viagens. Todos os direitos reservados. · Projeto acadêmico.</div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

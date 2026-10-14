@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRM Viagens</title>
+  <meta name="description" content="A BRM Viagens oferece curadoria de roteiros exclusivos, suporte 24h e estrutura completa para você viajar com calma.">
+  <link rel="icon" href="imagens/favicon.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="imagens/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="imagens/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="topo">
+    <div class="container topo__barra">
+      <a class="marca" href="index.html" aria-label="BRM Viagens, página inicial">
+        <span class="marca__logo">
+          <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+        </span>
+        <span class="marca__texto">
+          <strong>BRM Viagens</strong>
+          <span>Agência de Viagens</span>
+        </span>
+      </a>
+
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a class="navegacao__link navegacao__link--ativo" href="index.html">Início</a>
+        <a class="navegacao__link" href="explorar.html">Explorar</a>
+        <a class="navegacao__link" href="destino.html">Destinos</a>
+        <a class="navegacao__link" href="reserva.html">Reservar</a>
+      </nav>
+
+      <div class="topo__acoes">
+        <div class="conta">
+          <a class="perfil-atalho" href="perfil.html" aria-expanded="false" aria-haspopup="true" aria-controls="menuConta">
+            <span class="perfil-atalho__avatar" aria-hidden="true">MB</span>
+            <span class="perfil-atalho__info">
+              <span>Minha conta</span>
+              <strong>Maria Beatriz</strong>
+            </span>
+            <span class="perfil-atalho__seta" aria-hidden="true">▾</span>
+          </a>
+
+          <div class="conta__menu" id="menuConta" hidden>
+            <div class="conta__cabecalho">
+              <strong>Maria Beatriz</strong>
+              <span>Viajante BRM desde abril de 2025</span>
+            </div>
+
+            <a class="conta__item" href="perfil.html">
+              <span class="conta__icone" aria-hidden="true">👤</span>
+              <span>
+                <strong>Meu perfil</strong>
+                <small>Dados e preferências de viagem</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="reserva.html">
+              <span class="conta__icone" aria-hidden="true">🎫</span>
+              <span>
+                <strong>Minhas reservas</strong>
+                <small>Pagamentos, vouchers e pedidos</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="criar-perfil.html">
+              <span class="conta__icone" aria-hidden="true">✨</span>
+              <span>
+                <strong>Criar novo perfil</strong>
+                <small>Cadastre outro viajante</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item" href="admin.html">
+              <span class="conta__icone" aria-hidden="true">🛠</span>
+              <span>
+                <strong>Perfil Admin</strong>
+                <small>Criar conta de administração</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item conta__item--sair" href="entrar.html">
+              <span class="conta__icone" aria-hidden="true">🚪</span>
+              <span>
+                <strong>Sair</strong>
+                <small>Encerrar sessão e voltar ao login</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container hero__grade">
+        <div class="hero__texto-bloco">
+          <h1 class="hero__titulo">Viagens que viram <em>memórias</em>, não apenas pacotes.</h1>
+          <p class="hero__texto">
+            A BRM Viagens transforma cada destino em uma história planejada por especialistas:
+            roteiros exclusivos, estrutura completa e alguém por telefone a qualquer hora do dia.
+          </p>
+
+          <form class="busca-rapida" id="formularioBusca">
+            <div class="busca-rapida__linha">
+              <div class="campo">
+                <label for="campoDestino">Para onde você quer ir?</label>
+                <input type="search" id="campoDestino" name="destino" placeholder="Ex.: Serra da Mantiqueira, Salvador..." autocomplete="off">
+              </div>
+              <div class="campo">
+                <label for="campoCategoria">Perfil de viajante</label>
+                <select id="campoCategoria" name="categoria">
+                  <option value="todos">Todos os perfis</option>
+                  <option value="solo">Solo</option>
+                  <option value="casal">Casal</option>
+                  <option value="familia">Família</option>
+                  <option value="grupo">Grupo</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="campoPessoas">Viajantes</label>
+                <select id="campoPessoas" name="pessoas">
+                  <option value="1">1 pessoa</option>
+                  <option value="2" selected>2 pessoas</option>
+                  <option value="3">3 pessoas</option>
+                  <option value="4">4 pessoas</option>
+                  <option value="5">5 ou mais</option>
+                </select>
+              </div>
+            </div>
+            <div class="busca-rapida__rodape">
+              <div class="sugestoes">
+                <span>Populares:</span>
+                <button type="button" data-sugestao="Lençóis Maranhenses">Lençóis Maranhenses</button>
+                <button type="button" data-sugestao="Fernando de Noronha">Noronha</button>
+                <button type="button" data-sugestao="Ouro Preto">Ouro Preto</button>
+              </div>
+              <button class="botao botao--primario" type="submit">Buscar destinos</button>
+            </div>
+          </form>
+
+          <div class="hero__numeros">
+            <div class="numero">
+              <strong>120+</strong>
+              <span>destinos curados</span>
+            </div>
+            <div class="numero">
+              <strong>4,9/5</strong>
+              <span>avaliação média</span>
+            </div>
+            <div class="numero">
+              <strong>24h</strong>
+              <span>suporte antes e depois</span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="hero__imagem">
+          <img src="imagens/turismo.jpeg" alt="Ilustração conceitual da BRM Viagens: montanhas pastel, sol e lago com uma pequena tenda" width="740" height="494">
+          <figcaption class="hero__selo">
+            <div>
+              <strong>Roteiro da semana: Mantiqueira</strong>
+              <span>5 dias · 4 noites · trilha guiada</span>
+            </div>
+            <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="secao" id="estilos">
+      <div class="container">
+        <header class="secao__cabecalho">
+          <span class="secao__etiqueta">Escolha seu ritmo</span>
+          <h2 class="secao__titulo">Qual é o seu perfil de viajante?</h2>
+          <p class="secao__descricao">
+            Toque em um perfil para filtrar os destinos da home. A BRM ajusta o roteiro,
+            a hospedagem e o ritmo da equipe conforme quem vai junto com você.
+          </p>
+        </header>
+
+        <div class="filtros" role="group" aria-label="Filtros rápidos por perfil de viajante">
+          <button class="filtro filtro--solo" type="button" data-categoria="solo" aria-pressed="false">
+            <span class="filtro__icone" aria-hidden="true">🎒</span>
+            <span class="filtro__titulo">Solo</span>
+            <span class="filtro__descricao">Roteiros de ritmo próprio, com hospedagem individual e trilha guiada.</span>
+          </button>
+          <button class="filtro filtro--familia" type="button" data-categoria="familia" aria-pressed="false">
+            <span class="filtro__icone" aria-hidden="true">🧸</span>
+            <span class="filtro__titulo">Família</span>
+            <span class="filtro__descricao">Roteiros tranquilos, estruturados e cheios de nostalgia para todas as idades.</span>
+          </button>
+          <button class="filtro filtro--grupo" type="button" data-categoria="grupo" aria-pressed="false">
+            <span class="filtro__icone" aria-hidden="true">🎉</span>
+            <span class="filtro__titulo">Grupo</span>
+            <span class="filtro__descricao">Amigos, festas e confraternizações: estrutura que acomoda todo mundo junto.</span>
+          </button>
+          <button class="filtro filtro--casal" type="button" data-categoria="casal" aria-pressed="false">
+            <span class="filtro__icone" aria-hidden="true">💞</span>
+            <span class="filtro__titulo">Casal</span>
+            <span class="filtro__descricao">Roteiros românticos com jantares à luz de vela, pousadas aconchegantes e momentos para dois.</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="destinos">
+      <div class="container">
+        <header class="secao__cabecalho">
+          <span class="secao__etiqueta">Mais desejados</span>
+          <h2 class="secao__titulo">Destinos com estrutura BRM</h2>
+          <p class="secao__descricao" id="contadorDestinos">14 destinos encontrados</p>
+        </header>
+
+        <div class="destinos" id="gradeDestinos">
+          <article class="destino" data-categorias="solo casal familia grupo">
+            <div class="destino__foto">
+              <img src="imagens/mantigueira.jpeg" alt="Montanhas da Serra da Mantiqueira com trilha guiada" width="1200" height="800">
+              <span class="destino__tag">Solo</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Serra da Mantiqueira nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Minas Gerais</span>
+              <h3 class="destino__nome">Serra da Mantiqueira</h3>
+              <p class="destino__resumo">Trilha das estrelas, chalés de madeira e café da manhã com vista para o vale.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,9 · 128 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 2.480</strong>
+                <span>/ pessoa</span>
+                <small>6 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="solo casal grupo">
+            <div class="destino__foto">
+              <img src="imagens/lencol.jpeg" alt="Dunas dos Lençóis Maranhenses com lagoas entre as dunas" width="1200" height="800">
+              <span class="destino__tag">Solo</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Lençóis Maranhenses nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Maranhão</span>
+              <h3 class="destino__nome">Lençóis Maranhenses</h3>
+              <p class="destino__resumo">Caminhada entre dunas douradas, banhos nas lagoas e 4x4 pelo areal.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,8 · 96 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 3.120</strong>
+                <span>/ pessoa</span>
+                <small>6 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="grupo casal familia">
+            <div class="destino__foto">
+              <img src="imagens/Noronha.jpeg" alt="Praia de Fernando de Noronha com mar turquesa" width="1200" height="807">
+              <span class="destino__tag">Casal</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Fernando de Noronha nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Pernambuco</span>
+              <h3 class="destino__nome">Fernando de Noronha</h3>
+              <p class="destino__resumo">Pousada boutique na ilha, passeio de barco e observação de golfinhos-piloto.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>5,0 · 154 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 4.890</strong>
+                <span>/ pessoa</span>
+                <small>6 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="solo casal grupo familia">
+            <div class="destino__foto">
+              <img src="imagens/pantanal.jpeg" alt="Pantanal com lagoas, alviverdes e fauna nativa" width="1127" height="600">
+              <span class="destino__tag">Grupo</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Pantanal nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Mato Grosso</span>
+              <h3 class="destino__nome">Pantanal</h3>
+              <p class="destino__resumo">Safari fotográfico em veículo aberto, pôr do sol no rio e hospedagem em fazenda.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <span>4,7 · 82 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 2.950</strong>
+                <span>/ pessoa</span>
+                <small>6 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="grupo familia casal">
+            <div class="destino__foto">
+              <img src="imagens/salvador.jpeg" alt="Salvador com casas coloridas à beira-mar" width="900" height="553">
+              <span class="destino__tag">Grupo</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Salvador nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Bahia</span>
+              <h3 class="destino__nome">Salvador Pelourinho</h3>
+              <p class="destino__resumo">Roteiro afro-religioso, mercado e show de maracatu com guia que nasceu no bairro.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,8 · 211 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 1.780</strong>
+                <span>/ pessoa</span>
+                <small>8 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="familia casal">
+            <div class="destino__foto">
+              <img src="imagens/Gramado.jpeg" alt="Gramado com casas de estilo europeu e jardins floridos" width="419" height="279">
+              <span class="destino__tag">Família</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Gramado nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Rio Grande do Sul</span>
+              <h3 class="destino__nome">Gramado & Canela</h3>
+              <p class="destino__resumo">Passeio de trem, gôndola na serra e chocolate artesanal para todas as idades.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,9 · 173 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 1.980</strong>
+                <span>/ pessoa</span>
+                <small>8 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="grupo familia casal">
+            <div class="destino__foto">
+              <img src="imagens/ouropreto.jpeg" alt="Ouro Preto com casario colonial e torres de igreja" width="1200" height="800">
+              <span class="destino__tag">Grupo</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Ouro Preto nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Minas Gerais</span>
+              <h3 class="destino__nome">Ouro Preto</h3>
+              <p class="destino__resumo">Circuito das Igrejinhas, ateliês abertos e história em cada esquina barroca.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <span>4,6 · 140 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 1.640</strong>
+                <span>/ pessoa</span>
+                <small>8 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="familia casal solo">
+            <div class="destino__foto">
+              <img src="imagens/ilhasdemel.jpeg" alt="Ilha do Mel com praia de água clara e barco de passeio" width="679" height="451">
+              <span class="destino__tag">Solo</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Ilha do Mel nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Paraná</span>
+              <h3 class="destino__nome">Ilha do Mel</h3>
+              <p class="destino__resumo">Barco pela baía, trilhas na Mata Atlântica e almoço de peixe à beira-mar.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,8 · 67 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 2.150</strong>
+                <span>/ pessoa</span>
+                <small>6 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <!-- ===== NOVOS DESTINOS (PROVISÓRIOS) =====
+               Troque as imagens, os preços e as avaliações quando tiver os dados finais. -->
+
+          <article class="destino" data-categorias="familia casal grupo">
+            <div class="destino__foto">
+              <img src="imagens/salvador.jpeg" alt="Praias e piscinas naturais de Porto de Galinhas" width="900" height="553">
+              <span class="destino__tag">Família</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Porto de Galinhas nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Pernambuco</span>
+              <h3 class="destino__nome">Porto de Galinhas</h3>
+              <p class="destino__resumo">Piscinas naturais de águas cristalinas, passeios de jangada e areias de coqueirais.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,8 · 342 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 2.590</strong>
+                <span>/ pessoa</span>
+                <small>8 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="familia casal grupo">
+            <div class="destino__foto">
+              <img src="imagens/Gramado.jpeg" alt="Serra de Santa Catarina com clima de montanha e natureza" width="419" height="279">
+              <span class="destino__tag">Casal</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Santa Catarina nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Santa Catarina</span>
+              <h3 class="destino__nome">Serra & Litoral de Santa Catarina</h3>
+              <p class="destino__resumo">Praias de Florianópolis, trilhas na serra e roteiro gastronômico entre montanhas e mar.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,9 · 267 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 2.890</strong>
+                <span>/ pessoa</span>
+                <small>8 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="grupo familia casal">
+            <div class="destino__foto">
+              <img src="imagens/pantanal.jpeg" alt="Natureza exuberante do Mato Grosso com rios e verdes" width="1127" height="600">
+              <span class="destino__tag">Grupo</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Mato Grosso nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Mato Grosso</span>
+              <h3 class="destino__nome">Mato Grosso</h3>
+              <p class="destino__resumo">Chapada dos Guimarães, cachoeiras, cânions e a porta de entrada para o Pantanal.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <span>4,7 · 118 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 3.150</strong>
+                <span>/ pessoa</span>
+                <small>8 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="grupo familia casal">
+            <div class="destino__foto">
+              <img src="imagens/turismo.jpeg" alt="Território da tribo indígena Pataxós com natureza preservada" width="740" height="494">
+              <span class="destino__tag">Grupo</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Tribo Indígena Pataxós nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Bahia</span>
+              <h3 class="destino__nome">Tribo Indígena Pataxós</h3>
+              <p class="destino__resumo">Imersão cultural com a comunidade Pataxó: rituais, artesanato e história ancestral.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,9 · 74 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 1.990</strong>
+                <span>/ pessoa</span>
+                <small>6 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="familia grupo casal">
+            <div class="destino__foto">
+              <img src="imagens/lencol.jpeg" alt="Águas termais de Caldas Novas com parques aquáticos" width="1200" height="800">
+              <span class="destino__tag">Família</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Caldas Novas nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Goiás</span>
+              <h3 class="destino__nome">Caldas Novas</h3>
+              <p class="destino__resumo">Maior estância hidrotermal do mundo: parques aquáticos e águas quentes naturais.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <span>4,6 · 389 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 1.540</strong>
+                <span>/ pessoa</span>
+                <small>6 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="destino" data-categorias="familia casal grupo">
+            <div class="destino__foto">
+              <img src="imagens/mantigueira.jpeg" alt="Águas termais cristalinas de Rio Quente cercadas de natureza" width="1200" height="800">
+              <span class="destino__tag">Casal</span>
+              <button class="destino__coracao" type="button" aria-pressed="false" aria-label="Salvar Rio Quente nos favoritos">♡</button>
+            </div>
+            <div class="destino__corpo">
+              <span class="destino__local">Goiás</span>
+              <h3 class="destino__nome">Rio Quente</h3>
+              <p class="destino__resumo">Rio de águas quentes, praias fluviais e hotéis all inclusive à beira do cerrado.</p>
+              <div class="destino__avaliacao">
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <span>4,8 · 212 avaliações</span>
+              </div>
+              <div class="destino__preco">
+                <strong>R$ 2.120</strong>
+                <span>/ pessoa</span>
+                <small>8 x sem juros</small>
+              </div>
+            </div>
+            <div class="destino__acoes">
+              <a class="botao botao--claro botao--pequeno" href="destino.html">Ver detalhes</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="sem-resultados" id="semResultados">
+          Nenhum destino encontrado para este estilo. Tente outro filtro ou fale com a nossa equipe de curadoria.
+        </p>
+      </div>
+    </section>
+
+    <section class="secao" id="valores">
+      <div class="container">
+        <header class="secao__cabecalho">
+          <span class="secao__etiqueta">Por que a BRM</span>
+          <h2 class="secao__titulo">Três pilares que sustentam cada viagem</h2>
+          <p class="secao__descricao">
+            Nada de pacote pronto e sem dono. Nossa estrutura foi desenhada para você viajar
+            com segurança do primeiro clique até o retorno para casa.
+          </p>
+        </header>
+
+        <div class="pilares">
+          <article class="pilar pilar--1">
+            <span class="pilar__numero" aria-hidden="true">01</span>
+            <span class="pilar__icone" aria-hidden="true">🗺️</span>
+            <h3 class="pilar__titulo">Roteiros exclusivos</h3>
+            <p class="pilar__texto">
+              Cada destino nasce de uma visita presencial da nossa equipe. Você não encontra o mesmo
+              itinerário em nenhuma outra agência.
+            </p>
+            <ul class="pilar__lista">
+              <li>Trilhas abertas apenas para viajantes BRM</li>
+              <li>Anfitriões locais com experiência comprovada</li>
+              <li>Layout de dia a dia já validado por quem conheceu</li>
+            </ul>
+          </article>
+
+          <article class="pilar pilar--2">
+            <span class="pilar__numero" aria-hidden="true">02</span>
+            <span class="pilar__icone" aria-hidden="true">🎧</span>
+            <h3 class="pilar__titulo">Suporte 24h</h3>
+            <p class="pilar__texto">
+              Do embarque ao último dia, você fala com uma pessoa de verdade. Sem robô,
+              sem espera e sem se sentir sozinho em um lugar desconhecido.
+            </p>
+            <ul class="pilar__lista">
+              <li>Canal direto com o seu consultor responsável</li>
+              <li>Atendimento em português, 24 horas por dia</li>
+              <li>Plano de contingência para cada destino</li>
+            </ul>
+          </article>
+
+          <article class="pilar pilar--3">
+            <span class="pilar__numero" aria-hidden="true">03</span>
+            <span class="pilar__icone" aria-hidden="true">🔍</span>
+            <h3 class="pilar__titulo">Curadoria especializada</h3>
+            <p class="pilar__texto">
+              Fazemos perguntas antes de vender qualquer pacote. Se a viagem não faz
+              sentido para o seu perfil, nós dizemos na cara e sugerimos uma melhor.
+            </p>
+            <ul class="pilar__lista">
+              <li>Análise de perfil e ritmo de cada viajante</li>
+              <li>Preço transparente, sem custo surpresa</li>
+              <li>Confirmação real antes do pagamento</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="comecar">
+      <div class="container">
+        <div class="chamada">
+          <h2>Pronto para planejar a sua viagem?</h2>
+          <p>Crie o seu perfil em dois minutos, escolha o estilo que mais combina com você e receba uma seleção personalizada da nossa curadoria.</p>
+          <div class="chamada__botoes">
+            <a class="botao botao--primario" href="criar-perfil.html">Criar meu perfil</a>
+            <a class="botao botao--fantasma" href="explorar.html" data-alvo="#formularioBusca">Explorar destinos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <a class="marca" href="index.html">
+            <span class="marca__logo">
+              <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+            </span>
+            <span class="marca__texto">
+              <strong>BRM Viagens</strong>
+              <span>Agência de Viagens</span>
+            </span>
+          </a>
+          <p style="margin-top: 14px;">Viagens autorais para quem prefere conhecer e viver cada destino com tempo, segurança e alguém por perto.</p>
+          <div class="rodape__social">
+            <a href="#" aria-label="Instagram da BRM Viagens">ig</a>
+            <a href="#" aria-label="Facebook da BRM Viagens">fb</a>
+            <a href="#" aria-label="WhatsApp da BRM Viagens">wa</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="explorar.html">Explorar destinos</a></li>
+            <li><a href="destino.html">Detalhes e preços</a></li>
+            <li><a href="reserva.html">Finalizar reserva</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Sua conta</h3>
+          <ul>
+            <li><a href="perfil.html">Meu perfil</a></li>
+            <li><a href="criar-perfil.html">Criar perfil</a></li>
+            <li><a href="reserva.html#minhaReserva">Minha reserva</a></li>
+            <li><a href="admin.html">Perfil Admin</a></li>
+            <li><a href="criar-admin.html">Criar perfil Admin</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li>Atendimento 24h: (11) 4002-8922</li>
+            <li>contato@brmviagens.com.br</li>
+            <li>Minas Gerais · MG</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">© 2026 BRM Viagens. Todos os direitos reservados. · Projeto acadêmico.</div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
