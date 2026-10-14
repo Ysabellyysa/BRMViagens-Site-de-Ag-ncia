@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinos | BRM Viagens</title>
+  <meta name="description" content="Explore os destinos da BRM Viagens: clique nas fotos para ver detalhes, datas de saída, disponibilidade e preços de cada roteiro.">
+  <link rel="icon" href="imagens/favicon.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="imagens/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="imagens/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="topo">
+    <div class="container topo__barra">
+      <a class="marca" href="index.html" aria-label="BRM Viagens, página inicial">
+        <span class="marca__logo">
+          <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+        </span>
+        <span class="marca__texto">
+          <strong>BRM Viagens</strong>
+          <span>Agência de Viagens</span>
+        </span>
+      </a>
+
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a class="navegacao__link" href="index.html">Início</a>
+        <a class="navegacao__link" href="explorar.html">Explorar</a>
+        <a class="navegacao__link navegacao__link--ativo" href="destino.html">Destinos</a>
+        <a class="navegacao__link" href="reserva.html">Reservar</a>
+      </nav>
+
+      <div class="topo__acoes">
+        <div class="conta">
+          <a class="perfil-atalho" href="perfil.html" aria-expanded="false" aria-haspopup="true" aria-controls="menuConta">
+            <span class="perfil-atalho__avatar" aria-hidden="true">MB</span>
+            <span class="perfil-atalho__info">
+              <span>Minha conta</span>
+              <strong>Maria Beatriz</strong>
+            </span>
+            <span class="perfil-atalho__seta" aria-hidden="true">▾</span>
+          </a>
+
+          <div class="conta__menu" id="menuConta" hidden>
+            <div class="conta__cabecalho">
+              <strong>Maria Beatriz</strong>
+              <span>Viajante BRM desde abril de 2025</span>
+            </div>
+
+            <a class="conta__item" href="perfil.html">
+              <span class="conta__icone" aria-hidden="true">👤</span>
+              <span>
+                <strong>Meu perfil</strong>
+                <small>Dados e preferências de viagem</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="reserva.html">
+              <span class="conta__icone" aria-hidden="true">🎫</span>
+              <span>
+                <strong>Minhas reservas</strong>
+                <small>Pagamentos, vouchers e pedidos</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="criar-perfil.html">
+              <span class="conta__icone" aria-hidden="true">✨</span>
+              <span>
+                <strong>Criar novo perfil</strong>
+                <small>Cadastre outro viajante</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item" href="admin.html">
+              <span class="conta__icone" aria-hidden="true">🛠</span>
+              <span>
+                <strong>Perfil Admin</strong>
+                <small>Criar conta de administração</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item conta__item--sair" href="entrar.html">
+              <span class="conta__icone" aria-hidden="true">🚪</span>
+              <span>
+                <strong>Sair</strong>
+                <small>Encerrar sessão e voltar ao login</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="explorar__topo">
+      <div class="container">
+        <header class="secao__cabecalho">
+          <span class="secao__etiqueta">Catálogo de destinos</span>
+          <h1 class="secao__titulo">Escolha o seu próximo destino</h1>
+          <p class="secao__descricao">
+            Clique em uma das fotos para conhecer cada roteiro da BRM: a imagem em destaque, a
+            descrição, a duração, os preços e as próximas datas de saída são atualizados na hora.
+          </p>
+        </header>
+      </div>
+    </section>
+
+    <section class="container painel-destino">
+      <div class="galeria">
+        <div class="galeria__principal">
+          <img id="imagemDestaque" src="imagens/mantigueira.jpeg"
+            alt="Montanhas da Serra da Mantiqueira com trilha guiada" width="1200" height="800">
+        </div>
+
+        <div class="galeria__miniaturas" role="group" aria-label="Destinos disponíveis na BRM Viagens">
+          <button class="miniatura miniatura--ativa" type="button" aria-pressed="true"
+            data-chave="mantiqueira"
+            data-imagem="imagens/mantigueira.jpeg"
+            data-legenda="Montanhas da Serra da Mantiqueira com trilha guiada"
+            data-pacote="Serra da Mantiqueira"
+            data-descricao="Trilha das estrelas, chalés de madeira e café da manhã com vista para o vale."
+            data-duracao="5 dias e 4 noites"
+            data-preco="2480">
+            <img src="imagens/mantigueira.jpeg" alt="Serra da Mantiqueira" width="1200" height="800">
+          </button>
+          <button class="miniatura" type="button" aria-pressed="false"
+            data-chave="lencois"
+            data-imagem="imagens/lencol.jpeg"
+            data-legenda="Dunas dos Lençóis Maranhenses com lagoas entre as dunas"
+            data-pacote="Lençóis Maranhenses"
+            data-descricao="Caminhada entre dunas douradas, banhos nas lagoas e 4x4 pelo areal."
+            data-duracao="6 dias e 5 noites"
+            data-preco="3120">
+            <img src="imagens/lencol.jpeg" alt="Lençóis Maranhenses" width="1200" height="800">
+          </button>
+          <button class="miniatura" type="button" aria-pressed="false"
+            data-chave="noronha"
+            data-imagem="imagens/Noronha.jpeg"
+            data-legenda="Praia de Fernando de Noronha com mar turquesa"
+            data-pacote="Fernando de Noronha"
+            data-descricao="Pousada boutique na ilha, passeio de barco e observação de golfinhos-piloto."
+            data-duracao="7 dias e 6 noites"
+            data-preco="4890">
+            <img src="imagens/Noronha.jpeg" alt="Fernando de Noronha" width="1200" height="807">
+          </button>
+          <button class="miniatura" type="button" aria-pressed="false"
+            data-chave="pantanal"
+            data-imagem="imagens/pantanal.jpeg"
+            data-legenda="Pantanal com lagoas, vegetação e fauna nativa"
+            data-pacote="Pantanal"
+            data-descricao="Safari fotográfico em veículo aberto, pôr do sol no rio e hospedagem em fazenda."
+            data-duracao="4 dias e 3 noites"
+            data-preco="2950">
+            <img src="imagens/pantanal.jpeg" alt="Pantanal" width="1127" height="600">
+          </button>
+          <button class="miniatura" type="button" aria-pressed="false"
+            data-chave="salvador"
+            data-imagem="imagens/salvador.jpeg"
+            data-legenda="Salvador com casas coloridas à beira-mar"
+            data-pacote="Salvador Pelourinho"
+            data-descricao="Roteiro afro-religioso, mercado e show de maracatu com guia local."
+            data-duracao="4 dias e 3 noites"
+            data-preco="1780">
+            <img src="imagens/salvador.jpeg" alt="Salvador Pelourinho" width="900" height="553">
+          </button>
+          <button class="miniatura" type="button" aria-pressed="false"
+            data-chave="gramado"
+            data-imagem="imagens/Gramado.jpeg"
+            data-legenda="Gramado com casas de estilo europeu e jardins floridos"
+            data-pacote="Gramado &amp; Canela"
+            data-descricao="Passeio de trem, gôndola na serra e chocolate artesanal para todas as idades."
+            data-duracao="5 dias e 4 noites"
+            data-preco="1980">
+            <img src="imagens/Gramado.jpeg" alt="Gramado e Canela" width="419" height="279">
+          </button>
+          <button class="miniatura" type="button" aria-pressed="false"
+            data-chave="ouropreto"
+            data-imagem="imagens/ouropreto.jpeg"
+            data-legenda="Ouro Preto com casario colonial e torres de igreja"
+            data-pacote="Ouro Preto"
+            data-descricao="Circuito das Igrejinhas, ateliês abertos e história em cada esquina barroca."
+            data-duracao="3 dias e 2 noites"
+            data-preco="1640">
+            <img src="imagens/ouropreto.jpeg" alt="Ouro Preto" width="1200" height="800">
+          </button>
+          <button class="miniatura" type="button" aria-pressed="false"
+            data-chave="ilhademel"
+            data-imagem="imagens/ilhasdemel.jpeg"
+            data-legenda="Ilha do Mel com praia de água clara e barco de passeio"
+            data-pacote="Ilha do Mel"
+            data-descricao="Barco pela baía, trilhas na Mata Atlântica e almoço de peixe à beira-mar."
+            data-duracao="4 dias e 3 noites"
+            data-preco="2150">
+            <img src="imagens/ilhasdemel.jpeg" alt="Ilha do Mel" width="679" height="451">
+          </button>
+        </div>
+      </div>
+
+      <aside class="painel-lateral" aria-label="Resumo do destino selecionado">
+        <span class="painel-lateral__etiqueta">Destino selecionado</span>
+        <h2 class="painel-lateral__titulo" data-painel="pacote">Serra da Mantiqueira</h2>
+        <p class="painel-lateral__descricao" data-painel="descricao">
+          Trilha das estrelas, chalés de madeira e café da manhã com vista para o vale.
+        </p>
+
+        <div class="painel-lateral__linha">
+          <span>Duração</span>
+          <strong data-painel="duracao">5 dias e 4 noites</strong>
+        </div>
+        <div class="painel-lateral__linha">
+          <span>Saída</span>
+          <strong data-painel="saida">12/11/2026</strong>
+        </div>
+        <div class="painel-lateral__linha">
+          <span>Disponibilidade</span>
+          <strong data-painel="disponibilidade">Vagas abertas</strong>
+        </div>
+        <div class="painel-lateral__linha">
+          <span>Tarifa por viajante</span>
+          <strong data-painel="tarifa">R$ 2.480,00</strong>
+        </div>
+        <div class="painel-lateral__linha">
+          <span>Total para 2 viajantes</span>
+          <strong class="painel-lateral__preco" data-painel="total">R$ 4.960,00</strong>
+        </div>
+
+        <p class="painel-lateral__obs" data-painel="parcelas">
+          Ou em até 6x de R$ 826,67 sem juros. Taxa de proteção BRM inclusa na próxima etapa.
+        </p>
+
+        <a class="botao botao--primario" href="reserva.html">Seguir para a reserva</a>
+      </aside>
+    </section>
+
+    <section class="container" style="padding-bottom: 72px;">
+      <div class="tabela-envolucro">
+        <div class="tabela-envolucro__cabecalho">
+          <h2>Próximas saídas</h2>
+          <p>Selecione uma data para atualizar a saída e a disponibilidade no resumo ao lado.</p>
+        </div>
+
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th scope="col">Saída</th>
+              <th scope="col">Duração</th>
+              <th scope="col">Disponibilidade</th>
+              <th scope="col">A partir de</th>
+            </tr>
+          </thead>
+          <tbody id="destinoSaidas">
+            <tr class="tabela__linha tabela__linha--ativa" tabindex="0"
+              data-saida="12/11/2026" data-disponibilidade="Vagas abertas">
+              <td>12/11/2026</td>
+              <td>5 dias e 4 noites</td>
+              <td><span class="selo-disponibilidade selo-disponibilidade--vagas">Vagas abertas</span></td>
+              <td>R$ 2.480</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <a class="marca" href="index.html">
+            <span class="marca__logo">
+              <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+            </span>
+            <span class="marca__texto">
+              <strong>BRM Viagens</strong>
+              <span>Agência de Viagens</span>
+            </span>
+          </a>
+          <p style="margin-top: 14px;">Viagens autorais para quem prefere conhecer e viver cada destino com tempo, segurança e alguém por perto.</p>
+          <div class="rodape__social">
+            <a href="#" aria-label="Instagram da BRM Viagens">ig</a>
+            <a href="#" aria-label="Facebook da BRM Viagens">fb</a>
+            <a href="#" aria-label="WhatsApp da BRM Viagens">wa</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="explorar.html">Explorar destinos</a></li>
+            <li><a href="destino.html">Detalhes e preços</a></li>
+            <li><a href="reserva.html">Finalizar reserva</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Sua conta</h3>
+          <ul>
+            <li><a href="perfil.html">Meu perfil</a></li>
+            <li><a href="criar-perfil.html">Criar perfil</a></li>
+            <li><a href="reserva.html#minhaReserva">Minha reserva</a></li>
+            <li><a href="admin.html">Perfil Admin</a></li>
+            <li><a href="criar-admin.html">Criar perfil Admin</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li>Atendimento 24h: (11) 4002-8922</li>
+            <li>contato@brmviagens.com.br</li>
+            <li>Minas Gerais · MG</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">© 2026 BRM Viagens. Todos os direitos reservados. · Projeto acadêmico.</div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

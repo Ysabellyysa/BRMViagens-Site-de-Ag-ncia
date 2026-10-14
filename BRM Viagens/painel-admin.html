@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do administrador | BRM Viagens</title>
+  <meta name="description" content="Painel do administrador BRM: desenvolvimento do local, hóspedes, benefícios e avaliações.">
+  <link rel="icon" href="imagens/favicon.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="imagens/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="imagens/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="topo">
+    <div class="container topo__barra">
+      <a class="marca" href="index.html" aria-label="BRM Viagens, página inicial">
+        <span class="marca__logo">
+          <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+        </span>
+        <span class="marca__texto">
+          <strong>BRM Viagens</strong>
+          <span>Agência de Viagens</span>
+        </span>
+      </a>
+
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a class="navegacao__link" href="index.html">Início</a>
+        <a class="navegacao__link" href="explorar.html">Explorar</a>
+        <a class="navegacao__link" href="destino.html">Destinos</a>
+        <a class="navegacao__link" href="reserva.html">Reservar</a>
+      </nav>
+
+      <div class="topo__acoes">
+        <div class="conta">
+          <a class="perfil-atalho" href="painel-admin.html" aria-expanded="false" aria-haspopup="true" aria-controls="menuConta">
+            <span class="perfil-atalho__avatar" aria-hidden="true">BA</span>
+            <span class="perfil-atalho__info">
+              <span>Área do admin</span>
+              <strong>Empresa Parceira</strong>
+            </span>
+            <span class="perfil-atalho__seta" aria-hidden="true">▾</span>
+          </a>
+
+          <div class="conta__menu" id="menuConta" hidden>
+            <div class="conta__cabecalho">
+              <strong>Empresa Parceira</strong>
+              <span>Administrador BRM desde janeiro de 2026</span>
+            </div>
+
+            <a class="conta__item" href="painel-admin.html">
+              <span class="conta__icone" aria-hidden="true">🛠</span>
+              <span>
+                <strong>Painel do admin</strong>
+                <small>Hóspedes, benefícios e avaliações</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="criar-admin.html">
+              <span class="conta__icone" aria-hidden="true">🏢</span>
+              <span>
+                <strong>Editar cadastro</strong>
+                <small>Dados do local e da empresa</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="perfil.html">
+              <span class="conta__icone" aria-hidden="true">👤</span>
+              <span>
+                <strong>Ver perfil do viajante</strong>
+                <small>Como o hóspede enxerga o site</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item conta__item--sair" href="entrar.html">
+              <span class="conta__icone" aria-hidden="true">🚪</span>
+              <span>
+                <strong>Sair</strong>
+                <small>Encerrar sessão e voltar ao login</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="container painel-admin">
+      <div class="painel-admin__topo">
+        <div>
+          <span class="secao__etiqueta">Área do administrador</span>
+          <h1>Bem-vindo, Admin 🎉</h1>
+          <p class="secao__descricao" style="margin-top: 8px;">
+            Este é o painel da empresa <strong>Empresa Parceira</strong>. Acompanhe o
+            desenvolvimento do local, os hóspedes, os seus benefícios e as avaliações recebidas.
+          </p>
+        </div>
+        <div class="selo-nivel">
+          <span aria-hidden="true">🏅</span>
+          <span>Status: <strong>Anfitrião BRM Verificado</strong></span>
+        </div>
+      </div>
+
+      <div class="abas-admin" role="tablist" aria-label="Seções do painel do administrador">
+        <button class="aba aba--ativa" type="button" role="tab" aria-selected="true" data-aba="adminVisao">Visão geral</button>
+        <button class="aba" type="button" role="tab" aria-selected="false" data-aba="adminVisualizacao">Visualização</button>
+        <button class="aba" type="button" role="tab" aria-selected="false" data-aba="adminBeneficios">Benefícios</button>
+        <button class="aba" type="button" role="tab" aria-selected="false" data-aba="adminAvaliacoes">Avaliações</button>
+      </div>
+
+      <!-- ===== ABA: VISÃO GERAL ===== -->
+      <div class="aba-painel aba-painel--ativo" id="adminVisao" role="tabpanel">
+        <div class="grade-resumo-admin">
+          <article class="cartao-resumo">
+            <strong>1.284</strong>
+            <span>Visualizações do local</span>
+          </article>
+          <article class="cartao-resumo">
+            <strong>96</strong>
+            <span>Reservas recebidas</span>
+          </article>
+          <article class="cartao-resumo">
+            <strong>87%</strong>
+            <span>Taxa de ocupação</span>
+          </article>
+          <article class="cartao-resumo">
+            <strong>4,8</strong>
+            <span>Nota média dos hóspedes</span>
+          </article>
+        </div>
+
+        <div class="painel-admin__bloco">
+          <h2>Desenvolvimento do local</h2>
+          <p>Como o seu destino está crescendo dentro da BRM Viagens nos últimos 30 dias.</p>
+
+          <div class="barra-meta">
+            <div class="barra-meta__rotulo">
+              <span>Fotos e informações publicadas</span>
+              <span>100%</span>
+            </div>
+            <div class="barra-meta__trilho">
+              <div class="barra-meta__preenchimento" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="barra-meta">
+            <div class="barra-meta__rotulo">
+              <span>Reservas em relação à meta do mês</span>
+              <span>86%</span>
+            </div>
+            <div class="barra-meta__trilho">
+              <div class="barra-meta__preenchimento" style="width: 86%;"></div>
+            </div>
+          </div>
+
+          <div class="barra-meta">
+            <div class="barra-meta__rotulo">
+              <span>Respostas aos hóspedes em até 24h</span>
+              <span>92%</span>
+            </div>
+            <div class="barra-meta__trilho">
+              <div class="barra-meta__preenchimento" style="width: 92%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="painel-admin__bloco">
+          <h2>Próximos passos recomendados</h2>
+          <p>Pequenas ações que aumentam a visibilidade do seu local na home e no Explorar.</p>
+          <div class="lista-acoes">
+            <article class="acao">
+              <span class="acao__numero">1</span>
+              <div>
+                <p class="acao__titulo">Adicione mais fotos</p>
+                <p class="acao__texto">Locais com 10 fotos ou mais recebem até 40% mais cliques nos cards.</p>
+              </div>
+            </article>
+            <article class="acao acao--2">
+              <span class="acao__numero">2</span>
+              <div>
+                <p class="acao__titulo">Responda as avaliações</p>
+                <p class="acao__texto">Responder os hóspedes melhora a sua nota média e a confiança de quem reserva.</p>
+              </div>
+            </article>
+            <article class="acao acao--3">
+              <span class="acao__numero">3</span>
+              <div>
+                <p class="acao__titulo">Complete o quadro de regras</p>
+                <p class="acao__texto">Casas e apartamentos com regras de higiene claras são mais procurados.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ABA: VISUALIZAÇÃO ===== -->
+      <div class="aba-painel" id="adminVisualizacao" role="tabpanel">
+        <div class="grade-resumo-admin">
+          <article class="cartao-resumo">
+            <strong>18</strong>
+            <span>Hóspedes hospedados agora</span>
+          </article>
+          <article class="cartao-resumo">
+            <strong>7</strong>
+            <span>Em casal</span>
+          </article>
+          <article class="cartao-resumo">
+            <strong>6</strong>
+            <span>Em família</span>
+          </article>
+          <article class="cartao-resumo">
+            <strong>5</strong>
+            <span>Em grupo</span>
+          </article>
+        </div>
+
+        <div class="painel-admin__bloco">
+          <h2>Quem está hospedado</h2>
+          <p>Veja quantos hóspedes estão no local, quem são e em qual categoria de viagem se encaixam.</p>
+
+          <div class="tabela-envolucro">
+            <table class="tabela-hospedes">
+              <thead>
+                <tr>
+                  <th>Hóspede</th>
+                  <th>Categoria</th>
+                  <th>Período</th>
+                  <th>Hóspedes</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Maria Beatriz Nogueira</td>
+                  <td><span class="badge-categoria badge-categoria--casal">Casal</span></td>
+                  <td>12/03 a 16/03</td>
+                  <td>2</td>
+                  <td><span class="selo-status selo-status--confirmada">Confirmada</span></td>
+                </tr>
+                <tr>
+                  <td>Família Andrade</td>
+                  <td><span class="badge-categoria badge-categoria--familia">Família</span></td>
+                  <td>14/03 a 17/03</td>
+                  <td>4</td>
+                  <td><span class="selo-status selo-status--confirmada">Confirmada</span></td>
+                </tr>
+                <tr>
+                  <td>Trio Caminhantes</td>
+                  <td><span class="badge-categoria badge-categoria--grupo">Grupo</span></td>
+                  <td>15/03 a 19/03</td>
+                  <td>3</td>
+                  <td><span class="selo-status selo-status--andamento">Em andamento</span></td>
+                </tr>
+                <tr>
+                  <td>Caio Ferreira</td>
+                  <td><span class="badge-categoria badge-categoria--solo">Solo</span></td>
+                  <td>18/03 a 20/03</td>
+                  <td>1</td>
+                  <td><span class="selo-status selo-status--confirmada">Confirmada</span></td>
+                </tr>
+                <tr>
+                  <td>Casal Ribeiro</td>
+                  <td><span class="badge-categoria badge-categoria--casal">Casal</span></td>
+                  <td>20/03 a 25/03</td>
+                  <td>2</td>
+                  <td><span class="selo-status selo-status--andamento">Em andamento</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ABA: BENEFÍCIOS ===== -->
+      <div class="aba-painel" id="adminBeneficios" role="tabpanel">
+        <div class="painel-admin__bloco">
+          <h2>Benefícios de ser administrador BRM</h2>
+          <p>Vantagens exclusivas de quem hospeda pela BRM Viagens.</p>
+
+          <div class="beneficios-admin">
+            <article class="beneficio-admin">
+              <span class="beneficio-admin__icone" aria-hidden="true">📈</span>
+              <div>
+                <strong>Mais visibilidade</strong>
+                <p>Seu local aparece para milhares de viajantes que já decidiram onde querem ficar.</p>
+              </div>
+            </article>
+            <article class="beneficio-admin">
+              <span class="beneficio-admin__icone" aria-hidden="true">🤝</span>
+              <div>
+                <strong>Suporte de curadoria</strong>
+                <p>Nossa equipe ajuda a melhorar as fotos, os textos e o preço do seu destino.</p>
+              </div>
+            </article>
+            <article class="beneficio-admin">
+              <span class="beneficio-admin__icone" aria-hidden="true">💳</span>
+              <div>
+                <strong>Pagamento em dia</strong>
+                <p>Repasses garantidos e painel financeiro com todas as reservas organizadas.</p>
+              </div>
+            </article>
+            <article class="beneficio-admin">
+              <span class="beneficio-admin__icone" aria-hidden="true">🏆</span>
+              <div>
+                <strong>Selo de destaque</strong>
+                <p>Locais bem avaliados ganham o selo de anfitrião verificado na home e no Explorar.</p>
+              </div>
+            </article>
+            <article class="beneficio-admin">
+              <span class="beneficio-admin__icone" aria-hidden="true">📊</span>
+              <div>
+                <strong>Relatórios detalhados</strong>
+                <p>Acompanhe ocupação, categorias de hóspedes e avaliações em tempo real.</p>
+              </div>
+            </article>
+            <article class="beneficio-admin">
+              <span class="beneficio-admin__icone" aria-hidden="true">🎓</span>
+              <div>
+                <strong>Capacitação BRM</strong>
+                <p>Materiais e dicas de hospitalidade para encantar cada vez mais os viajantes.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="painel-admin__bloco">
+          <h2>Certificado de mérito</h2>
+          <p>Ao bater a meta de hóspedes do mês, o seu local recebe o certificado de <strong>Melhor Lugar Hospedável</strong>.</p>
+
+          <div class="certificado">
+            <span class="certificado__selo" aria-hidden="true">🏅</span>
+            <div>
+              <strong>Certificado de Mérito — Melhor Lugar Hospedável</strong>
+              <p>
+                Concedido à <strong>Empresa Parceira</strong> por atingir 86% da meta de hóspedes
+                em fevereiro de 2026, com excelência em hospitalidade e cuidado com os viajantes.
+              </p>
+            </div>
+          </div>
+
+          <div class="barra-meta">
+            <div class="barra-meta__rotulo">
+              <span>Meta de hóspedes do mês</span>
+              <span>86% concluída</span>
+            </div>
+            <div class="barra-meta__trilho">
+              <div class="barra-meta__preenchimento" style="width: 86%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ABA: AVALIAÇÕES ===== -->
+      <div class="aba-painel" id="adminAvaliacoes" role="tabpanel">
+        <div class="painel-admin__bloco">
+          <h2>Avaliações dos hóspedes</h2>
+          <p>O que quem se hospedou no seu local achou da experiência.</p>
+
+          <div class="lista-avaliacoes">
+            <article class="avaliacao-item">
+              <span class="avaliacao-item__avatar" aria-hidden="true">MB</span>
+              <div>
+                <strong>Maria Beatriz · Casal</strong>
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <p>Lugar muito confortável e bem acessível. Como fomos em casal, achamos tudo bem calmo e tranquilo, perfeito para descansar.</p>
+                <div class="avaliacao-item__tags">
+                  <span>Confortável</span>
+                  <span>Bem acessível</span>
+                  <span>Calmo e tranquilo</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="avaliacao-item">
+              <span class="avaliacao-item__avatar" aria-hidden="true">FA</span>
+              <div>
+                <strong>Família Andrade · Família</strong>
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <p>Fomos em família e as crianças adoraram. Muitas boas atrações e o local se importa de verdade com o meio ambiente.</p>
+                <div class="avaliacao-item__tags">
+                  <span>Confortável</span>
+                  <span>Boas atrações</span>
+                  <span>Meio ambiente</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="avaliacao-item">
+              <span class="avaliacao-item__avatar" aria-hidden="true">TC</span>
+              <div>
+                <strong>Trio Caminhantes · Grupo</strong>
+                <span class="estrelas" aria-hidden="true">★★★★☆</span>
+                <p>Bem acessível para o grupo todo e com um quadro de regras de higiene claro, seguindo as normas brasileiras. Recomendamos.</p>
+                <div class="avaliacao-item__tags">
+                  <span>Bem acessível</span>
+                  <span>Regras de higiene</span>
+                  <span>Normas brasileiras</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="avaliacao-item">
+              <span class="avaliacao-item__avatar" aria-hidden="true">CR</span>
+              <div>
+                <strong>Casal Ribeiro · Casal</strong>
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <p>Apartamento impecável, com quadro de regras de higiene visível e tudo dentro das normas brasileiras. Muito confortável.</p>
+                <div class="avaliacao-item__tags">
+                  <span>Confortável</span>
+                  <span>Regras de higiene</span>
+                  <span>Normas brasileiras</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <a class="marca" href="index.html">
+            <span class="marca__logo">
+              <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+            </span>
+            <span class="marca__texto">
+              <strong>BRM Viagens</strong>
+              <span>Agência de Viagens</span>
+            </span>
+          </a>
+          <p style="margin-top: 14px;">Viagens autorais para quem prefere conhecer e viver cada destino com tempo, segurança e alguém por perto.</p>
+          <div class="rodape__social">
+            <a href="#" aria-label="Instagram da BRM Viagens">ig</a>
+            <a href="#" aria-label="Facebook da BRM Viagens">fb</a>
+            <a href="#" aria-label="WhatsApp da BRM Viagens">wa</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="explorar.html">Explorar destinos</a></li>
+            <li><a href="destino.html">Detalhes e preços</a></li>
+            <li><a href="reserva.html">Finalizar reserva</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Sua conta</h3>
+          <ul>
+            <li><a href="painel-admin.html">Painel do admin</a></li>
+            <li><a href="criar-admin.html">Editar cadastro</a></li>
+            <li><a href="perfil.html">Perfil do viajante</a></li>
+            <li><a href="entrar.html">Sair</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li>Atendimento 24h: (11) 4002-8922</li>
+            <li>contato@brmviagens.com.br</li>
+            <li>Minas Gerais · MG</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">© 2026 BRM Viagens. Todos os direitos reservados. · Projeto acadêmico.</div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>

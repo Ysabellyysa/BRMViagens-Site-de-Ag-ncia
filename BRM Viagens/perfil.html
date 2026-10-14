@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu perfil | BRM Viagens</title>
+  <link rel="icon" href="imagens/favicon.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="imagens/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="imagens/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="topo">
+    <div class="container topo__barra">
+      <a class="marca" href="index.html" aria-label="BRM Viagens, página inicial">
+        <span class="marca__logo">
+          <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+        </span>
+        <span class="marca__texto">
+          <strong>BRM Viagens</strong>
+          <span>Agência de Viagens</span>
+        </span>
+      </a>
+
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a class="navegacao__link" href="index.html">Início</a>
+        <a class="navegacao__link" href="explorar.html">Explorar</a>
+        <a class="navegacao__link" href="destino.html">Destinos</a>
+        <a class="navegacao__link" href="reserva.html">Reservar</a>
+      </nav>
+
+      <div class="topo__acoes">
+        <div class="conta">
+          <a class="perfil-atalho" href="perfil.html" aria-expanded="false" aria-haspopup="true" aria-controls="menuConta">
+            <span class="perfil-atalho__avatar" aria-hidden="true">MB</span>
+            <span class="perfil-atalho__info">
+              <span>Minha conta</span>
+              <strong>Maria Beatriz</strong>
+            </span>
+            <span class="perfil-atalho__seta" aria-hidden="true">▾</span>
+          </a>
+
+          <div class="conta__menu" id="menuConta" hidden>
+            <div class="conta__cabecalho">
+              <strong>Maria Beatriz</strong>
+              <span>Viajante BRM desde abril de 2025</span>
+            </div>
+
+            <a class="conta__item" href="perfil.html">
+              <span class="conta__icone" aria-hidden="true">👤</span>
+              <span>
+                <strong>Meu perfil</strong>
+                <small>Dados e preferências de viagem</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="reserva.html">
+              <span class="conta__icone" aria-hidden="true">🎫</span>
+              <span>
+                <strong>Minhas reservas</strong>
+                <small>Pagamentos, vouchers e pedidos</small>
+              </span>
+            </a>
+
+            <a class="conta__item" href="criar-perfil.html">
+              <span class="conta__icone" aria-hidden="true">✨</span>
+              <span>
+                <strong>Criar novo perfil</strong>
+                <small>Cadastre outro viajante</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item" href="admin.html">
+              <span class="conta__icone" aria-hidden="true">🛠</span>
+              <span>
+                <strong>Perfil Admin</strong>
+                <small>Criar conta de administração</small>
+              </span>
+            </a>
+
+            <span class="conta__separador" role="separator"></span>
+
+            <a class="conta__item conta__item--sair" href="entrar.html">
+              <span class="conta__icone" aria-hidden="true">🚪</span>
+              <span>
+                <strong>Sair</strong>
+                <small>Encerrar sessão e voltar ao login</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" data-perfil>
+    <section class="explorar__topo">
+      <div class="container">
+        <header class="perfil-cabecalho">
+          <div class="avatar-grande" aria-hidden="true">MB</div>
+          <div class="perfil-cabecalho__texto">
+            <h1>Olá, Maria Beatriz</h1>
+            <p class="secao__descricao" style="margin-top: 6px;">Membro desde abril de 2025 — viajante BRM</p>
+            <div class="selo-nivel">
+              <span aria-hidden="true">💞</span>
+              <span>Nível do perfil de viajante: <strong>Casal</strong></span>
+            </div>
+          </div>
+          <div class="perfil-cabecalho__acoes">
+            <a class="botao botao--claro botao--pequeno" href="criar-perfil.html">Editar perfil</a>
+            <a class="botao botao--primario botao--pequeno" href="painel-admin.html">Ver painel admin</a>
+            <a class="botao botao--fantasma botao--pequeno" href="entrar.html">Sair</a>
+          </div>
+        </header>
+      </div>
+    </section>
+
+    <section class="container" id="painelPerfil">
+      <div class="navegacao-etapas" style="margin-top: 20px;">
+        <button class="navegacao__link" type="button" data-aba-perfil="visao">Visão geral</button>
+        <button class="navegacao__link navegacao__link--ativo" type="button" data-aba-perfil="reservas">Minhas reservas</button>
+        <button class="navegacao__link" type="button" data-aba-perfil="beneficios">Benefícios</button>
+      </div>
+
+      <div class="estatisticas" data-painel-perfil="visao" hidden>
+        <article class="estatistica">
+          <span class="estatistica__icone estatistica__icone--1" aria-hidden="true">✈️</span>
+          <strong>12</strong>
+          <span>Destinos visitados</span>
+        </article>
+        <article class="estatistica">
+          <span class="estatistica__icone estatistica__icone--2" aria-hidden="true">⭐</span>
+          <strong>48.420</strong>
+          <span>Milhas acumuladas</span>
+        </article>
+        <article class="estatistica">
+          <span class="estatistica__icone estatistica__icone--3" aria-hidden="true">🗺️</span>
+          <strong>8</strong>
+          <span>Rotas concluídas</span>
+        </article>
+        <article class="estatistica">
+          <span class="estatistica__icone estatistica__icone--4" aria-hidden="true">🏆</span>
+          <strong>BRM Gold</strong>
+          <span>Status BRM</span>
+        </article>
+      </div>
+
+      <div class="quadro-detalhes" style="margin-top: 26px;" data-painel-perfil="reservas">
+        <h2>Minhas reservas</h2>
+        <p class="secao__descricao" style="margin: 0;">Acompanhamento completo com status, acesso aos roteiros digitais e vouchers.</p>
+
+        <div class="tabela-envolucro" style="margin-top: 20px;">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>Reserva</th>
+                <th>Roteiro</th>
+                <th>Data</th>
+                <th>Pessoas</th>
+                <th>Status</th>
+                <th>PDF do roteiro</th>
+                <th>Voucher</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BRM-482917</td>
+                <td>Serra da Mantiqueira · 5 dias</td>
+                <td>12/03/2026</td>
+                <td>2</td>
+                <td><span class="selo-status selo-status--confirmada">Confirmada</span></td>
+                <td><a class="link-pdf" href="#" data-aviso="Roteiro digital aberto em uma nova aba.">Abrir roteiro</a></td>
+                <td><a class="link-pdf" href="#" data-aviso="Voucher BRM-482917 baixado.">Baixar voucher</a></td>
+              </tr>
+              <tr>
+                <td>BRM-464210</td>
+                <td>Fernando de Noronha · 7 dias</td>
+                <td>10/11/2025</td>
+                <td>2</td>
+                <td><span class="selo-status selo-status--concluida">Concluída</span></td>
+                <td><a class="link-pdf" href="#" data-aviso="Roteiro digital aberto em uma nova aba.">Abrir roteiro</a></td>
+                <td><a class="link-pdf" href="#" data-aviso="Voucher BRM-464210 baixado.">Baixar voucher</a></td>
+              </tr>
+              <tr>
+                <td>BRM-451044</td>
+                <td>Ilha do Mel · 5 dias</td>
+                <td>22/09/2025</td>
+                <td>3</td>
+                <td><span class="selo-status selo-status--andamento">Em andamento</span></td>
+                <td><a class="link-pdf" href="#" data-aviso="Roteiro digital aberto em uma nova aba.">Abrir roteiro</a></td>
+                <td><a class="link-pdf" href="#" data-aviso="Voucher BRM-451044 baixado.">Baixar voucher</a></td>
+              </tr>
+              <tr>
+                <td>BRM-438722</td>
+                <td>Gramado e Canela · 3 dias</td>
+                <td>18/06/2025</td>
+                <td>4</td>
+                <td><span class="selo-status selo-status--cancelada">Cancelada</span></td>
+                <td><a class="link-pdf" href="#" data-aviso="Roteiro digital não disponível para esta reserva.">Indisponível</a></td>
+                <td><span style="font-size: 0.85rem; color: var(--tinta-clara);">—</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="quadro-detalhes" style="margin-top: 26px;" data-painel-perfil="beneficios" hidden>
+        <h2>Benefícios BRM</h2>
+        <p class="secao__descricao" style="margin: 0;">Curadoria exclusiva, suporte 24h e upgrade de quartos conforme disponibilidade.</p>
+        <div class="lista-acoes">
+          <article class="acao">
+            <span class="acao__numero">1</span>
+            <div>
+              <p class="acao__titulo">Suporte 24h</p>
+              <p class="acao__texto">Canal direto com consultor responsável antes, durante e depois da viagem.</p>
+            </div>
+          </article>
+          <article class="acao acao--2">
+            <span class="acao__numero">2</span>
+            <div>
+              <p class="acao__titulo">Curadoria personalizada</p>
+              <p class="acao__texto">Selecionamos cada roteiro com base no seu perfil de viajante: Solo, Casal, Família ou Grupo.</p>
+            </div>
+          </article>
+          <article class="acao acao--3">
+            <span class="acao__numero">3</span>
+            <div>
+              <p class="acao__titulo">Milhas que nunca expiram</p>
+              <p class="acao__texto">Acumule 1 milha a cada R$ 10 gasto e utilize em sua próxima viagem BRM.</p>
+            </div>
+          </article>
+          <article class="acao acao--4">
+            <span class="acao__numero">4</span>
+            <div>
+              <p class="acao__titulo">Upgrade prioritário</p>
+              <p class="acao__texto">Prioridade na lista de upgrade sempre que houver disponibilidade nos quartos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <a class="marca" href="index.html">
+            <span class="marca__logo">
+              <img class="marca__logo-imagem" src="imagens/BRMviagens.jpeg" alt="" width="52" height="52">
+            </span>
+            <span class="marca__texto">
+              <strong>BRM Viagens</strong>
+              <span>Agência de Viagens</span>
+            </span>
+          </a>
+          <p style="margin-top: 14px;">Viagens autorais para quem prefere conhecer e viver cada destino com tempo, segurança e alguém por perto.</p>
+          <div class="rodape__social">
+            <a href="#" aria-label="Instagram da BRM Viagens">ig</a>
+            <a href="#" aria-label="Facebook da BRM Viagens">fb</a>
+            <a href="#" aria-label="WhatsApp da BRM Viagens">wa</a>
+          </div>
+        </div>
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="explorar.html">Explorar</a></li>
+            <li><a href="destino.html">Destinos</a></li>
+            <li><a href="reserva.html">Reservar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Sua conta</h3>
+          <ul>
+            <li><a href="perfil.html">Meu perfil</a></li>
+            <li><a href="criar-perfil.html">Criar perfil</a></li>
+            <li><a href="reserva.html#minhaReserva">Minha reserva</a></li>
+            <li><a href="admin.html">Perfil Admin</a></li>
+            <li><a href="criar-admin.html">Criar perfil Admin</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li>Atendimento 24h: (11) 4002-8922</li>
+            <li>contato@brmviagens.com.br</li>
+            <li>Minas Gerais · MG</li>
+          </ul>
+        </div>
+      </div>
+      <div class="rodape__base">© 2026 BRM Viagens. Todos os direitos reservados. · Projeto acadêmico.</div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
